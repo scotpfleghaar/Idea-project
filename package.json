@@ -1,0 +1,14 @@
+{
+  "name": "idea",
+  "version": "1.0.0",
+  "description": "An idea recorder for creators",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Scot Pfleghaar",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
