@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const flash = require('connect-flash');
 const session = require('express-session');
+const passport = require('passport');
 
 const app = express();
 
@@ -15,6 +16,9 @@ const ideas = require('./routes/ideas');
 
 //Load User Routes
 const users = require('./routes/users');
+
+//Passport Config
+require('./config/passport')(passport);
 
 ///////////DATABASE////////////
 
@@ -26,7 +30,6 @@ mongoose.connect('mongodb://test:test@ds249787.mlab.com:49787/idea-dev',{
 }).then(()=>{
     console.log("MongoDB Connected");
 }).catch(err => console.log(err));
-
 
 
 
@@ -53,6 +56,10 @@ app.use(session({
     saveUninitialized: true
 }));
 
+// Passport Middleware (Must follow Express-session)
+app.use(passport.initialize());
+app.use(passport.session());
+
 // connect-flash Middleware
 app.use(flash());
 
@@ -61,6 +68,7 @@ app.use(function(req, res, next){
     res.locals.success_msg = req.flash("success_msg");
     res.locals.error_msg = req.flash("error_msg");
     res.locals.error = req.flash("error");
+    res.locals.user = req.user || null;
     next();
 });
 
