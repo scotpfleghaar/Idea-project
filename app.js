@@ -22,10 +22,13 @@ require('./config/passport')(passport);
 
 ///////////DATABASE////////////
 
+//DB Configuration
+const db = require('./config/database')
+
 //Map Global Promises - Removes Warning
 mongoose.Promise = global.Promise;
 //Connect to DB
-mongoose.connect('mongodb://test:test@ds249787.mlab.com:49787/idea-dev',{
+mongoose.connect(db.mongoURI,{
     useMongoClient: true
 }).then(()=>{
     console.log("MongoDB Connected");
@@ -94,7 +97,9 @@ app.use('/ideas', ideas);
 
 app.use('/users', users);
 
-const port = 5000;
+const port = process.env.PORT || 5000;
+
+
 
 app.listen(port, () => {
     console.log(`Server started on Port ${port}`);
