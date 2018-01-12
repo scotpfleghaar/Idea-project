@@ -80,7 +80,7 @@ app.use(function(req, res, next){
 
 //Index Route
 app.get("/", (req, res)=>{
-   const title = "Welcome";
+   const title = "idea";
     res.render("index", {
         title: title
     });
