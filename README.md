@@ -1,4 +1,4 @@
-### Idea
+# Idea
 
 ## Live Preview
 <https://ancient-harbor-42166.herokuapp.com/users/login>
