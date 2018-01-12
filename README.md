@@ -1,7 +1,7 @@
 # Idea
 
 ## Live Preview
-<https://ancient-harbor-42166.herokuapp.com/users/login>
+<https://ancient-harbor-42166.herokuapp.com>
 
 ## Why?
 An application where users can record their ideas for any creative activity. Whether you're a content creator or simply have awesome ideas, this free to use application lets you record them and access them from anywhere anytime.
