@@ -12,6 +12,7 @@ This application was building using some of the newest and best technologies
 - **Node.js**, and **Express** to handle the backend routing middleware and the like. 
 - **Handlebars** to handle templates. 
 - **MongoDB** and **mongoose** to handle the database
+- **AWS** to host the database
 - **Passport** and **bcryptJS** to handle Authentication
 - **Bootstrap 4 Beta** on the front-end
 - And many other technologies to implement a verity of tasks that you can examine in the package.json file.
